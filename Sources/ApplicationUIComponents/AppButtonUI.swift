@@ -1,5 +1,5 @@
 //
-//  AppButton.swift
+//  AppButtonUI.swift
 //  
 //
 //  Created by Gaurav Kumar on 25/04/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(macOS 10.15, *)
-struct NewButton<Content: View> : View {
+struct AppButtonUI<Content: View> : View {
     let content : ()-> Content
     let action: () -> Void
 
@@ -26,9 +26,9 @@ struct NewButton<Content: View> : View {
 
 
 @available(macOS 10.15, *)
-struct NewButton_Previews: PreviewProvider {
+struct AppButtonUI_Previews: PreviewProvider {
     static var previews: some View {
-        NewButton {
+        AppButtonUI {
             print("Hello")
         } content: {
             Text("")
