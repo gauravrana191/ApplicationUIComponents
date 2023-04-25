@@ -8,16 +8,16 @@
 import SwiftUI
 
 @available(macOS 10.15, *)
-struct AppButtonUI<Content: View> : View {
+public struct AppButtonUI<Content: View> : View {
     let content : ()-> Content
     let action: () -> Void
 
-    init(action: @escaping () -> Void, @ViewBuilder content: @escaping () -> Content) {
+    public init(action: @escaping () -> Void, @ViewBuilder content: @escaping () -> Content) {
         self.content = content
         self.action = action
     }
 
-    var body: some View {
+    public var body: some View {
         Button(action: self.action) {
             content()
         }
@@ -25,14 +25,14 @@ struct AppButtonUI<Content: View> : View {
 }
 
 
-@available(macOS 10.15, *)
-struct AppButtonUI_Previews: PreviewProvider {
-    static var previews: some View {
-        AppButtonUI {
-            print("Hello")
-        } content: {
-            Text("")
-        }
-
-    }
-}
+//@available(macOS 10.15, *)
+//struct AppButtonUI_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AppButtonUI {
+//            print("Hello")
+//        } content: {
+//            Text("")
+//        }
+//
+//    }
+//}
