@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(macOS 10.15, *)
+@available(iOS 13.0, *)
 public struct AppButtonUI<Content: View> : View {
     let content : ()-> Content
     let action: () -> Void
@@ -25,7 +25,7 @@ public struct AppButtonUI<Content: View> : View {
 }
 
 
-//@available(macOS 10.15, *)
+//@available(iOS 13.0, *)
 //struct AppButtonUI_Previews: PreviewProvider {
 //    static var previews: some View {
 //        AppButtonUI {
