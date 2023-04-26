@@ -15,11 +15,13 @@ struct AppToggleUI: View {
         
         ZStack {
 
+            Color.white
+            
             RoundedRectangle(cornerRadius: 15)
-                .stroke(.white)
-                .frame(width: 122, height: 60)
+                .fill(.white)
+                .frame(width: 120, height: 60)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 15)
                         .fill(.black)
                         .frame(width: 60, height: 60),
                     alignment:isOn ?  .leading : .trailing
