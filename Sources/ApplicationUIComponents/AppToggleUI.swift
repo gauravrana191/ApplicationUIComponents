@@ -15,7 +15,7 @@ struct AppToggleUI: View {
         
         ZStack {
 
-            Color.white
+            //Color.white
             
             RoundedRectangle(cornerRadius: 15)
                 .fill(.white)
