@@ -25,6 +25,23 @@ public struct AppButtonUI<Content: View> : View {
 }
 
 
+@available(iOS 13.0, *)
+public struct AppCustomToggleUI<Label> : View where Label : View {
+
+    public init(isOn: Binding<Bool>, @ViewBuilder label: @escaping () -> Label) {
+        self.isOn = isOn
+        self.label = label
+    }
+    
+    let isOn:Binding<Bool>
+    let label : ()-> Label
+
+    public var body: some View {
+        Toggle(isOn: isOn, label: label)
+            .toggleStyle(CustomToggleStyle())
+    }
+}
+
 //@available(iOS 13.0, *)
 //struct AppButtonUI_Previews: PreviewProvider {
 //    static var previews: some View {
