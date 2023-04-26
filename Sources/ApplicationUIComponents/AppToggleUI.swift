@@ -26,7 +26,7 @@ struct AppToggleUI: View {
                         .frame(width: 60, height: 60),
                     alignment:isOn ?  .leading : .trailing
                 )
-                .animation(.linear, value: 0.2)
+                .animation(.linear(duration: 0.2))
 
             HStack {
                 HStack {
