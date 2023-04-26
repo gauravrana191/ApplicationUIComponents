@@ -31,7 +31,7 @@ struct AppToggleUI: View {
                     Image(systemName: "cart.fill")
                         .foregroundColor(isOn ? .white : .black)
                 }.frame(width: 60, height: 60)
-                Spacer()
+                //Spacer()
                 HStack {
                     Image(systemName: "Home.fill")
                         .foregroundColor(isOn ? .black : .white)
