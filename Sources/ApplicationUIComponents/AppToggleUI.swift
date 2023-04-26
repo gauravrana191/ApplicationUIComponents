@@ -33,7 +33,7 @@ struct AppToggleUI: View {
                 }.frame(width: 60, height: 60)
                 //Spacer()
                 HStack {
-                    Image(systemName: "Home.fill")
+                    Image(systemName: "home.fill")
                         .foregroundColor(isOn ? .black : .white)
                 }.frame(width: 60, height: 60)
             }
