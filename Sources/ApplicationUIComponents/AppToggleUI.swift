@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 13.0, *)
 struct AppToggleUI: View {
 
-    var isOn = true
+    var isOn:Bool
     var body: some View {
         
         RoundedRectangle(cornerRadius: 15)
@@ -24,8 +24,8 @@ struct AppToggleUI: View {
             .animation(.linear, value: 0.2)
         
 //        ZStack {
-//            
-//            
+//
+//
 //            HStack {
 //                HStack {
 //                    Image(systemName: "cart.fill")
@@ -37,7 +37,7 @@ struct AppToggleUI: View {
 //                        .foregroundColor(isOn ? .black : .white)
 //                }.frame(width: 60, height: 60)
 //            }//.frame(width: 120, height: 60)
-//            
+//
 //        }.frame(width: 120, height: 60)
     }
 }
@@ -48,7 +48,7 @@ struct AppToggleUI: View {
 @available(iOS 13.0, *)
 struct AppToggleUI_Previews: PreviewProvider {
     static var previews: some View {
-        AppToggleUI()
+        AppToggleUI(isOn: true)
     }
 }
 
