@@ -13,32 +13,32 @@ struct AppToggleUI: View {
     var isOn:Bool
     var body: some View {
         
-        RoundedRectangle(cornerRadius: 15)
-            .stroke(.white)
-            .frame(width: 122, height: 60)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.black)
-                    .frame(width: 60, height: 60,alignment:isOn ?  .leading : .trailing)
-            )
-            .animation(.linear, value: 0.2)
-        
-//        ZStack {
-//
-//
-//            HStack {
-//                HStack {
-//                    Image(systemName: "cart.fill")
-//                        .foregroundColor(isOn ? .white : .black)
-//                }.frame(width: 60, height: 60)
-//                Spacer()
-//                HStack {
-//                    Image(systemName: "Home.fill")
-//                        .foregroundColor(isOn ? .black : .white)
-//                }.frame(width: 60, height: 60)
-//            }//.frame(width: 120, height: 60)
-//
-//        }.frame(width: 120, height: 60)
+        ZStack {
+
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(.white)
+                .frame(width: 122, height: 60)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.black)
+                        .frame(width: 60, height: 60),
+                    alignment:isOn ?  .leading : .trailing
+                )
+                .animation(.linear, value: 0.2)
+
+            HStack {
+                HStack {
+                    Image(systemName: "cart.fill")
+                        .foregroundColor(isOn ? .white : .black)
+                }.frame(width: 60, height: 60)
+                Spacer()
+                HStack {
+                    Image(systemName: "Home.fill")
+                        .foregroundColor(isOn ? .black : .white)
+                }.frame(width: 60, height: 60)
+            }
+
+        }.frame(width: 120, height: 60)
     }
 }
 
