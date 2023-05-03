@@ -14,7 +14,7 @@ protocol CoreDataProtocol {
     associatedtype Entity
     func fetch(sortDescriptors: [NSSortDescriptor],
                    predicate: NSPredicate?) -> AnyPublisher<[Entity], Error>
-    func add(entity:Entity) -> AnyPublisher<Bool, Error>
-    func edit(entity:Entity) -> AnyPublisher<Bool, Error>
+    func add() -> AnyPublisher<Bool, Error>
+    func edit() -> AnyPublisher<Bool, Error>
     func delete(entity:Entity) -> AnyPublisher<Bool, Error>
 }

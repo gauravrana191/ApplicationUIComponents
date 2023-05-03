@@ -38,24 +38,24 @@ public class CoreDataRepository<Entity: NSManagedObject>:CoreDataProtocol {
         .eraseToAnyPublisher()
     }
     
-    public func add(entity:Entity) -> AnyPublisher<Bool, Error> {
-        self.coreDataAction(entity: entity)
+    public func add() -> AnyPublisher<Bool, Error> {
+        self.coreDataAction()
     }
     
-    public func edit(entity:Entity) -> AnyPublisher<Bool, Error> {
-        self.coreDataAction(entity: entity)
+    public func edit() -> AnyPublisher<Bool, Error> {
+        self.coreDataAction()
     }
         
     public func delete(entity:Entity) -> AnyPublisher<Bool, Error> {
         self.coreDataAction(entity: entity,isDelete: true)
     }
     
-    private func coreDataAction(entity:Entity,isDelete:Bool = false) -> AnyPublisher<Bool, Error> {
+    private func coreDataAction(entity:Entity? = nil,isDelete:Bool = false) -> AnyPublisher<Bool, Error> {
         Deferred { [context] in
             Future  { promise in
                 context.perform {
                     do {
-                        if isDelete {
+                        if let entity = entity,isDelete {
                             context.delete(entity)
                         }
                         try context.save()
