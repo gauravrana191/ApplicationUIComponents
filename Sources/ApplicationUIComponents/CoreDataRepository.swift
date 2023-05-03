@@ -17,7 +17,7 @@ public class CoreDataRepository<Entity: NSManagedObject>:CoreDataProtocol {
         self.context = context
     }
     
-    func fetch(sortDescriptors: [NSSortDescriptor] = [],
+    public func fetch(sortDescriptors: [NSSortDescriptor] = [],
                    predicate: NSPredicate? = nil) -> AnyPublisher<[Entity], Error> {
         return Future { promise in
             self.context.perform {
@@ -36,7 +36,7 @@ public class CoreDataRepository<Entity: NSManagedObject>:CoreDataProtocol {
             .eraseToAnyPublisher()
         }
     
-    func add(entity:Entity) -> AnyPublisher<Bool, Error> {
+    public func add(entity:Entity) -> AnyPublisher<Bool, Error> {
             Deferred { [context] in
                 Future  { promise in
                     context.perform {
